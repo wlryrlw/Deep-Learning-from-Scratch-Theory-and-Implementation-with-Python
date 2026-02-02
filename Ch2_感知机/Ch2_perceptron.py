@@ -1,14 +1,16 @@
 import numpy as np
 
-def And(x1, x2):
+# 不使用偏置值
+def And(x1, x2): 
     w1, w2, theta = 0.5, 0.5, 0.7
     tmp = x1*w1 + x2*w2
     if tmp <= theta:
         return 0
     else:
         return 1
-    
-def AND(x1, x2):
+
+# 使用偏置值
+def AND(x1, x2): 
     x = np.array([x1, x2])
     w = np.array([0.5, 0.5])
     b = -0.7
@@ -45,7 +47,6 @@ def XOR(x1, x2):
     return y
 
 if __name__ == "__main__":
-    # 定义输入组合
     inputs = [(0, 0), (1, 0), (0, 1), (1, 1)]
 
     print(f"{'Input':<10} | {'AND':<5} | {'NAND':<5} | {'OR':<5} | {'XOR':<5}")
